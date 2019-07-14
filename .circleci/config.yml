@@ -1,4 +1,11 @@
 version: 2
+dependencies:
+  override:
+    # installing git-lfs
+    - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+    - sudo apt-get install git-lfs=2.2.0
+    - ssh git@github.com git-lfs-authenticate <user>/<project>.git download
+    - git lfs pull
 jobs:
   build:
     docker:
