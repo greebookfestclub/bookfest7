@@ -4,16 +4,16 @@ jobs:
     docker:
       - image: vvakame/review:3.2
     steps:
-      - run
+      - run:
         name: set repository of git-lfs
         command: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-      - run
+      - run:
         name: install git-lfs
         command: sudo apt-get install git-lfs
-      - run
+      - run:
         name: initialize git-lfs
         command: git lfs install
-      - run
+      - run:
         name: git lfs pull
         command: git lfs pull
       - checkout
