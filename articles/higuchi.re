@@ -71,4 +71,8 @@ githubアカウントを教えていただければownerに追加します。
 まだ調べていません。これから調べて書きます。
 
 == CI/CD環境
-まだ出来ていません。これから作って書きます。
+Circle CIを利用しています。
+githubでorganizationを作り、CircleCIにloginします。
+すると、CI対象のorganizationを選べるため、対象のorganizationにgreebookfestclubを含めます。
+設定ファイルである .circleci/config.yml は作っておいたので、そのままbuildボタンを押します。
+１分ほど待つと、成果物のpdfファイルを画面上から取得することができます。
