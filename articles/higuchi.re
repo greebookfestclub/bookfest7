@@ -72,7 +72,11 @@ githubアカウントを教えていただければownerに追加します。
 
 == CI/CD環境
 Circle CIを利用しています。
-githubでorganizationを作り、CircleCIにloginします。
-すると、CI対象のorganizationを選べるため、対象のorganizationにgreebookfestclubを含めます。
-設定ファイルである .circleci/config.yml は作っておいたので、そのままbuildボタンを押します。
-１分ほど待つと、成果物のpdfファイルを画面上から取得することができます。
+まず、1文字でも変更して、Pull Requestを作ってください。
+すると、自動でCircleCIのBuildが走ります。
+下記画面のDetailを押下し、遷移したCircleCIの画面で、"Artifacts"タブを押下します。
+すると、GREE-BookFest7.pdfというリンクが表示されるため、
+それを押下するとPullRequestの内容を含むPDFを確認できます。
+確認して問題なければ、mergeしてください。
+
+//indepimage[circleci]
