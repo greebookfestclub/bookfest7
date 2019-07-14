@@ -1,16 +1,21 @@
 version: 2
-dependencies:
-  override:
-    # installing git-lfs
-    - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-    - sudo apt-get install git-lfs=2.2.0
-    - ssh git@github.com git-lfs-authenticate <user>/<project>.git download
-    - git lfs pull
 jobs:
   build:
     docker:
-      - image: vvakame/review:3.1
+      - image: vvakame/review:3.2
     steps:
+      - run
+        name: set repository of git-lfs
+        command: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+      - run
+        name: install git-lfs
+        command: sudo apt-get install git-lfs
+      - run
+        name: initialize git-lfs
+        command: git lfs install
+      - run
+        name: git lfs pull
+        command: git lfs pull
       - checkout
       - restore_cache:
           keys:
