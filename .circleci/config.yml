@@ -8,6 +8,10 @@ jobs:
       - run:
           name: Install Git LFS
           command: |
+            cat <<EOF>~/.ssh/config
+host *
+    StrictHostKeyChecking no
+EOF
             curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
             apt-get -y install git git-lfs openssh-client
             git lfs pull
