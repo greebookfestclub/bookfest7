@@ -8,7 +8,8 @@ jobs:
       - run:
           name: Install Git LFS
           command: |
-            apk add git git-lfs
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+            apt-get install git git-lfs openssh-client
             git lfs pull
       - run:
           name: Setup
