@@ -8,12 +8,16 @@ jobs:
       - restore_cache:
           keys:
             - npm-cache-{{ checksum "package-lock.json" }}
+      - save_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
       - run:
           name: set repository of git-lfs
-          command: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-      -   run:
+          command: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+      - run:
           name: install git-lfs
-          command: sudo apt-get install git-lfs
+          command: apt-get install git-lfs
       - run:
           name: initialize git-lfs
           command: git lfs install
@@ -23,10 +27,6 @@ jobs:
       - run:
           name: Setup
           command: npm install
-      - save_cache:
-          key: npm-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
       - run:
           name: Test
           command: npm test
