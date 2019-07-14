@@ -5,28 +5,21 @@ jobs:
       - image: vvakame/review:3.2
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - npm-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Git LFS
+          command: |
+            apk add git git-lfs
+            git lfs pull
+      - run:
+          name: Setup
+          command: npm install
+#      - restore_cache:
+#          keys:
+#            - npm-cache-{{ checksum "package-lock.json" }}
       - save_cache:
           key: npm-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: set repository of git-lfs
-          command: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-      - run:
-          name: install git-lfs
-          command: apt-get -y install git-lfs openssh-client
-      - run:
-          name: initialize git-lfs
-          command: git lfs install
-      - run:
-          name: git lfs pull
-          command: git lfs pull
-      - run:
-          name: Setup
-          command: npm install
       - run:
           name: Test
           command: npm test
