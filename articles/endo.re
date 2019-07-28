@@ -13,7 +13,7 @@
 iOSでは販売価格をAppleが決定します。その価格定義であるTier表はiTunes Connectの一覧表から参照可能です。ただし料金は為替変動などを理由にApple側のタイミングで変更されます。
 
 === Androidの場合
-Androidも販売価格はGoogleが決定します。その定義には基準通貨からGoogleが定めるレートで変換した値が使われます。自分で設定することも可能ですが、通常はGoogleに任せた方が良いでしょう。
+Androidも販売価格はGoogleが決定します。その定義には基準通貨からGoogleが定めるレートで変換した値が使われます。自分で設定することも可能ですが、通常はGoogleに任せた方がよいでしょう。
 販売価格の取得はAPI経由で行うことができます。Google Play Developer APIのSubscriptions and In-App Purchases APIにあるInappproducts@<fn>{endofn01}により取得可能です。
 
 //footnote[endofn01][https://developers.google.com/android-publisher/api-ref/inappproducts]
