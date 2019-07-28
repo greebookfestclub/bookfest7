@@ -15,6 +15,7 @@ iOSでは販売価格をAppleが決定します。その価格定義であるTie
 === Androidの場合
 Androidも販売価格はGoogleが決定します。その定義には基準通貨からGoogleが定めるレートで変換した値が使われます。自分で設定することも可能ですが、通常はGoogleに任せた方が良いでしょう。
 販売価格の取得はAPI経由で行うことができます。Google Play Developer API@<fn>{endofn01}@<fn>{endofn02}のSubscriptions and In-App Purchases APIにあるInappproducts@<fn>{endofn03}により取得可能です。
+
 //footnote[endofn01][https://developers.google.com/android-publisher/]
 //footnote[endofn02][https://developer.android.com/google/play/developer-api?hl=JA]
 //footnote[endofn03][https://developers.google.com/android-publisher/api-ref/inappproducts]
