@@ -6,7 +6,7 @@
 機械学習のエンジニアですが、iOS/Android/Webなど広く浅く行なっています。
 カタンとドミニオンとビールが好き。好きな二郎は、目黒店。
 
-==== 遠藤辰弥 / @<href>{https://twitter.com/tattyamm,@tattyamm} (@<chap>{endo}, @<chap>{endo2})
+==== 遠藤辰弥 / @<href>{https://twitter.com/tattyamm,@tattyamm} (@<chap>{endo})
 
 スマホ向けアプリ共通システムのサーバーサードを担当。
 
